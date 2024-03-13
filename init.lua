@@ -263,37 +263,6 @@ require('lazy').setup({
   -- Use `opts = {}` to force a plugin to be loaded.
   --
 
-  {
-    'nvim-neo-tree/neo-tree.nvim',
-    branch = 'v3.x',
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
-      'MunifTanjim/nui.nvim',
-      -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
-    },
-  },
-
-  -- NOTE: Harpoon setup
-  {
-    'theprimeagen/harpoon',
-    config = function()
-      local mark = require 'harpoon.mark'
-      local ui = require 'harpoon.ui'
-      vim.keymap.set('n', '<leader>a', mark.add_file)
-      vim.keymap.set('n', '<C-e>', ui.toggle_quick_menu)
-      vim.keymap.set('n', '<C-r>', function()
-        ui.nav_file(1)
-      end)
-      vim.keymap.set('n', '<C-t>', function()
-        ui.nav_file(2)
-      end)
-      vim.keymap.set('n', '<C-y>', function()
-        ui.nav_file(3)
-      end)
-    end,
-  },
-
   -- Here is a more advanced example where we pass configuration
   -- options to `gitsigns.nvim`. This is equivalent to the following Lua:
   --    require('gitsigns').setup({ ... })
@@ -789,7 +758,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-moon'
+      vim.cmd.colorscheme 'tokyonight-night'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
